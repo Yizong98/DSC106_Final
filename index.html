@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Highcharts Example</title>
+
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- http://doc.jsfiddle.net/use/hacks.html#css-panel-hack -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body style="background-color: #ece9e6;">
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/streamgraph.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/annotations.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="cool"></div>
+<!--
+<div class= grid-container, id="container">
+</div>
+-->
+<div class='tableauPlaceholder' id='viz1575590450333' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;DS&#47;DSC106Finale&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='DSC106Finale&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;DS&#47;DSC106Finale&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1575590450333');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+<div class='tableauPlaceholder' id='viz1575590478483' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;DS&#47;DSC106Finale2&#47;Sheet2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='DSC106Finale2&#47;Sheet2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;DS&#47;DSC106Finale2&#47;Sheet2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1575590478483');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+<!-- Chart Placement Table -->
+<table class="simpleTable greaterArea">
+        <tr>
+            <td rowspan="3">
+                <span id="container"> </span>
+                <span id="container2"> </span>
+            </td>
+               
+            <td id="legend">
+                    <table>
+                        <tr>
+                            <td></td>
+                            <th>Avg</th>
+                        </tr>
+                        <tr>
+                            <td scope="row">Attack</td>
+                            <td id="attack">0</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Skill</td>
+                            <td id="skill">0</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Movement</td>
+                            <td id="movement">0</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Power</td>
+                            <td id="power">0</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Mentality</td>
+                            <td id="mentality">0</td>
+                        </tr scope="row">
+                    </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input id="toggle-on" class="toggle toggle-left" name="toggle" value="false" type="radio" checked>
+                <label for="toggle-on" class="btn"><i class="fa fa-pie-chart"></i></label>
+                <input id="toggle-off" class="toggle toggle-right" name="toggle" value="true" type="radio">
+                <label for="toggle-off" class="btn"><i class="fa fa-bar-chart"></i></label>
+            </td>
+        </tr>
+        <tr>
+            <td id="pieGrid"></td>
+            <td id="addText"></td>
+        </tr>
+
+</table>
+
+		<script src="main.js">
+        </script>
+    <div class='spider' id='spider'>
+        <script src='spider.js'></script>
+    </div>
+	</body>
+</html>
